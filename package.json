@@ -1,5 +1,5 @@
 {
-  "name": "example-typescript-package",
+  "name": "@editorjs/mytool",
   "version": "0.2.2",
   "description": "",
   "main": "dist/cjs/index.js",
@@ -13,13 +13,17 @@
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:types",
     "build:cjs": "node tools/cleanup cjs && tsc -p config/tsconfig.cjs.json",
     "build:esm": "node tools/cleanup esm && tsc -p config/tsconfig.esm.json",
-    "build:umd": "node tools/cleanup umd && webpack --config config/webpack.config.js",
+    "build:umd": "node tools/cleanup umd && webpack --config config/webpack.config.js ",
     "build:types": "node tools/cleanup types && tsc -p config/tsconfig.types.json",
     "clean": "node tools/cleanup",
     "package": "npm run build && npm pack",
     "test": "jest --no-cache --runInBand",
     "test:cov": "jest --coverage --no-cache --runInBand",
-    "addscope": "node tools/packagejson name @tomchen/example-typescript-package"
+    "addscope": "node tools/packagejson name @editorjs/mytool",
+    "dev:esm": "node tools/cleanup esm && tsc -p config/tsconfig.esm.json --watch",
+    "dev:cjs": "node tools/cleanup cjs && tsc -p config/tsconfig.cjs.json --watch",
+    "dev:umd": "node tools/cleanup umd && webpack --config config/webpack.config.js --watch",
+    "dev:types": "node tools/cleanup types && tsc -p config/tsconfig.types.json --watch"
   },
   "publishConfig": {
     "access": "public"
@@ -40,20 +44,21 @@
     "esm",
     "umd"
   ],
-  "author": "Tom Chen <tomchen.org@gmail.com>",
+  "author": "anirut1800@gmail.com",
   "license": "MIT",
-  "homepage": "https://github.com/tomchen/example-typescript-package",
+  "homepage": "https://github.com/VillSource/editorjs-theme.git",
   "repository": {
     "type": "git",
-    "url": "git@github.com:tomchen/example-typescript-package.git"
+    "url": "https://github.com/VillSource/editorjs-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/tomchen/example-typescript-package/issues"
+    "url": "https://github.com/VillSource/editorjs-theme/issues"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@codexteam/icons": "^0.2.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@editorjs/editorjs": "^2.26.5",
     "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",

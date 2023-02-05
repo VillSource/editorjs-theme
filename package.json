@@ -1,5 +1,5 @@
 {
-  "name": "@editorjs/mytool",
+  "name": "mytool",
   "version": "0.2.2",
   "description": "",
   "main": "dist/cjs/index.js",
@@ -19,7 +19,7 @@
     "package": "npm run build && npm pack",
     "test": "jest --no-cache --runInBand",
     "test:cov": "jest --coverage --no-cache --runInBand",
-    "addscope": "node tools/packagejson name @editorjs/mytool",
+    "addscope": "node tools/packagejson name mytool",
     "dev:esm": "node tools/cleanup esm && tsc -p config/tsconfig.esm.json --watch",
     "dev:cjs": "node tools/cleanup cjs && tsc -p config/tsconfig.cjs.json --watch",
     "dev:umd": "node tools/cleanup umd && webpack --config config/webpack.config.js --watch",
